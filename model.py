@@ -1,9 +1,11 @@
 from sqlalchemy.orm import DeclarativeBase
 # from sqlalchemy.ext.declarative import declarative_base
+
 from sqlalchemy import Column,Integer,Text,Date
 from datetime import date
+# Base = declarative_base()
 
-# Base =declarative_base()
+
 class Base(DeclarativeBase):
     pass
 
@@ -23,10 +25,4 @@ class Vehicle(Base):
     No_plate=Column(Text)
     driver_id =Column(Text)
     route_id=Column(Text)
-    created_at = Column(Date, default=date.today)
-
-class Route(Base):
-    __tablename__="routes"
-    id=Column(Integer,primary_key=True)
-    vehicle_id =Column(Integer)
     created_at = Column(Date, default=date.today)
