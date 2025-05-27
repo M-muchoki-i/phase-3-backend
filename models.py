@@ -3,6 +3,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column,Integer,Text,Date
 from datetime import date
 
+# Base =declarative_base()
 class Base(DeclarativeBase):
     pass
 
