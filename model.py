@@ -6,7 +6,7 @@ from datetime import date
 from sqlalchemy.orm import sessionmaker 
 # Base = declarative_base()
 
-engine =create_engine (' sqlite:///Tracker.db', echo =True)
+engine =create_engine ("sqlite:///Tracker.db", echo =True)
 Session =sessionmaker(bind=engine)
 
 def get_db():
