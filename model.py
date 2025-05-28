@@ -1,9 +1,20 @@
 from sqlalchemy.orm import DeclarativeBase
 # from sqlalchemy.ext.declarative import declarative_base
 
-from sqlalchemy import Column,Integer,Text,Date
+from sqlalchemy import Column,Integer,Text,Date,create_engine
 from datetime import date
+from sqlalchemy.orm import sessionmaker 
 # Base = declarative_base()
+
+engine =create_engine (' sqlite:///Tracker.db', echo =True)
+Session =sessionmaker(bind=engine)
+
+def get_db():
+    session=Session()
+    try:
+        yield session
+    finally:
+        session.close()
 
 
 class Base(DeclarativeBase):
