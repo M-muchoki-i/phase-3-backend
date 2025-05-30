@@ -4,6 +4,7 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Column,Integer,Text,Date,create_engine
 from datetime import date
 from sqlalchemy.orm import sessionmaker 
+
 # Base = declarative_base()
 
 engine =create_engine ("sqlite:///Tracker.db", echo =True)
@@ -28,6 +29,7 @@ class Driver(Base):
     gender=Column(Text)
     id_number=Column(Integer)
     vehicle_id=Column(Integer)
+    
     created_at = Column(Date, default=date.today)
 
 class Vehicle(Base):
