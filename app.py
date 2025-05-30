@@ -25,19 +25,19 @@ def add_drivers(driver: DriverSchema,session: Session = Depends(get_db)):
     # new_driver=Driver(name=driver.name,email=driver.email,gender=driver.gender,id_number=driver.id_number,vehicle_id=driver.vehicle_id)
     new_driver = Driver(**driver.model_dump())
     session.add(new_driver)
-    session.commit
+    session.commit()
     print(driver)
 
     return {"message": "driver added succesfully"}
 
 
-@app.get("/drivers{id}")
+@app.get("/drivers/{id}")
 def get_drivers(id: int):
     print("Driver id", id)
     return {}
 
 
-@app.patch("/drivers{id}")
+@app.patch("/drivers/{id}")
 def update_drivers(id: int):
     print("driver_id", id)
     return {"message": "cretaed sucessfully"}

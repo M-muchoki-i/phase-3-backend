@@ -29,7 +29,6 @@ class Driver(Base):
     gender=Column(Text)
     id_number=Column(Integer)
     vehicle_id=Column(Integer)
-    
     created_at = Column(Date, default=date.today)
 
 class Vehicle(Base):
