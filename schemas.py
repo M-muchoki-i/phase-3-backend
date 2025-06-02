@@ -5,6 +5,6 @@ class DriverSchema(BaseModel):
     name:str
     email:str
     gender:str
-    id_number:int
-    vehicle_id:int
+    
+    vehicle_type:str
    

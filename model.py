@@ -26,9 +26,8 @@ class Driver(Base):
     id=Column(Integer(),primary_key=True)
     name=Column(Text)
     email=Column(Text)
-    gender=Column(Text)
-    id_number=Column(Integer)
-    vehicle_id=Column(Integer)
+   
+    vehicle_type=Column(Text)
     created_at = Column(Date, default=date.today)
 
 class Vehicle(Base):
