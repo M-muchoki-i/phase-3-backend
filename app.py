@@ -81,12 +81,12 @@ def passangers(session: Session = Depends(get_db)):
     return passangers
 
 @app.post("/passangers")
-def add_passangers(Passanger: PassangerSchema, session: Session = Depends(get_db)):
+def add_passangers(passanger: PassangerSchema, session: Session = Depends(get_db)):
     # new_driver=Driver(name=driver.name,email=driver.email,gender=driver.gender,id_number=driver.id_number,vehicle_id=driver.vehicle_id)
-    new_passanger = Passanger(**passangers.model_dump())
+    new_passanger = Passanger(**passanger.model_dump())
     session.add(new_passanger)
     session.commit()
-    print(passangers)
+    print(passanger)
 
     return {"message": "passanger added succesfully"}
 

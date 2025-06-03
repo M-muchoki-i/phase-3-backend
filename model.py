@@ -48,8 +48,12 @@ class Passanger(Base):
       id =Column(Integer(), primary_key=True)
       name=Column(Text)
       email=Column(Text)
+
       No_plate = Column(Text)
-      Vehicle_type=Column(Text)
+      vehicle_type = Column(Text)
+      
+    #    No_plate = Column(Text)
+    #   Vehicle_type=Column(Text)
       
     
       
